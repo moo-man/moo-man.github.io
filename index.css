@@ -1,0 +1,61 @@
+html,
+body{
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#page-top { 
+    background: #000; 
+    color: #FFF; 
+    line-height: 1; 
+    height: 100%;
+    .monoliths{
+        padding: 0px;
+        margin: 0px;
+        display: flex; 
+        overflow: hidden;
+        height: 100%;
+        li { 
+            width: 25%; 
+            transition: 1s;
+          } 
+        img { 
+            display: block; 
+            height: 100%;
+            width: 100%; 
+            object-fit: cover; 
+            object-position: 50% 20%; 
+          }
+          .system-link { 
+            color: inherit; 
+            text-decoration: inherit; 
+            display: block; 
+            transition: 0.5s;
+            filter: grayscale(0.5);
+            height: 100%;
+
+          }
+
+        .system-link:hover {
+            transition: 0.5s;
+            filter: grayscale(0);
+            transform: scale(1.02);
+        }
+      }
+  } 
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) { 
+    #page-top .monoliths li { 
+      width: 37.5%; 
+      -webkit-clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%); 
+      clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%); 
+      margin-right: -7.5%; 
+    } 
+
+    #page-top .monoliths li:first-of-type { 
+        margin-left: -7.5%; 
+        -webkit-clip-path: polygon(0% 0, 100% 0, 75% 100%, 0 100%); 
+        clip-path: polygon(0% 0, 100% 0, 75% 100%, 0 100%); 
+      } 
+  }
