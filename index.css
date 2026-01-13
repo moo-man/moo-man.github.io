@@ -35,6 +35,14 @@
 }
 
 
+@font-face {
+  font-family: "Dominican";
+  src: url('./fonts/dominica.ttf');
+  font-weight: bold;
+}
+
+
+
 html,
 body{
     height: 100%;
@@ -85,8 +93,7 @@ body{
 
 
             .links-box {
-                width: 460px;
-                height: 292px;
+                width: 25vh;
                 background: rgb(0, 0, 0, 0.4);
                 position: absolute;
                 top: 40%;
@@ -95,11 +102,13 @@ body{
                 display : flex;
                 flex-direction: column;
                 opacity: 0;
+                gap: 2rem;
+
               h2 {
                 text-align: center;
                 margin: 0px;
                 height: 50px;
-                line-height: 50px;
+                line-height: 36px;
               }
             }
           }
@@ -107,9 +116,10 @@ body{
           .links {
             display : flex;
             flex-direction: column;
-            height: 100%;
+            align-items: center;
             justify-content: space-evenly;
             transition: 0.5s;
+            gap: 2rem;
 
             a {
               font-size: 1.6rem;
@@ -139,6 +149,9 @@ body{
   footer {
     background : black;
     color: white;
+    h3 {
+      font-size: 3vh;
+    }
     text-align: center;
     flex: 0 0 20px;
   }
@@ -164,15 +177,65 @@ body{
 
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) { 
     #page-top .monoliths li { 
-      width: 37.5%; 
-      -webkit-clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%); 
-      clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%); 
-      margin-right: -7.5%; 
+      width: 27%;
+      -webkit-clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
+      clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
+      margin-right: -6.5%;
     } 
 
     #page-top .monoliths li:first-of-type { 
-        margin-left: -7.5%; 
+        margin-left: -2.5%; 
         -webkit-clip-path: polygon(0% 0, 100% 0, 75% 100%, 0 100%); 
         clip-path: polygon(0% 0, 100% 0, 75% 100%, 0 100%); 
       } 
+  }
+
+  @media screen and (orientation:portrait) {
+    header {
+      h3 {
+        font-size: 2vh;
+      }
+    }
+    #page-top {
+      background: red;
+      .monoliths{
+        flex-direction: column;
+
+        li:first-of-type,
+        li {
+          width: unset;
+          -webkit-clip-path: unset;
+          clip-path: unset;
+          margin-right: unset;
+
+          img {
+            object-position: 50% 35%; 
+          }
+
+          &.system {
+            height: 450px;
+            .links-box {
+              flex-direction: row;
+              top: 10%;
+              left: 10%;
+              height: 70%;
+              width: 80%;
+              align-items: center;
+              justify-content: space-between;
+  
+              .links {
+                a:hover {
+                  padding-left: 0px;
+                }
+              }
+            }
+          }
+        }
+
+
+
+
+        
+      }
+    }
   }
